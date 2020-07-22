@@ -1,0 +1,360 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+html,body {
+    height: 100%;
+}
+
+body {
+    background: rgb(235, 233, 232);
+    color: 444;
+    font-family: 'Droid Sans', sans-serif;
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+}
+
+#substitute-app {
+    display:flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+header {
+    background: #9BC97E;
+    display:flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+header .header-wrap {
+    width: 100%;
+    max-width: 900px;
+    display:flex;
+}
+
+header .header-wrap figure {
+    flex: 2 0;
+    height: auto;
+}
+
+header .header-wrap figure img {
+    width: 100%;
+    height: auto;
+}
+
+header .header-wrap div {
+    flex: 1 1;
+}
+
+#slideContainer {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 35.33% 0 0 0;
+}
+
+#slideContainer img  {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+
+#slideContainer img.active {
+    opacity: 1;
+    animation: slideUp 500ms;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+nav {
+    position: sticky;
+    z-index: 50;
+}
+
+nav ul {
+    background: #9BC97E;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+.hamburger {
+    display:none;
+}
+
+nav ul li a {
+    color: #dcf5cd;
+    position: relative;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li a:focus {
+    background: #add196;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+nav ul li .dropdown {
+    display: none;
+    flex-direction: column;
+    background: rgb(132, 182, 101);
+    border-radius: 5px;
+    color: #000;
+    position:absolute;
+}
+
+nav ul li .active {
+    display: flex;
+}
+
+nav ul li.search {
+    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li.search input {
+    font-size: 1.1rem;
+    padding: 4px 7px;
+    background: rgb(132, 182, 101);
+    border: solid 1px rgb(132, 182, 101);
+    border-radius: 5px 0 0 5px;
+    color: #FFF;
+    margin: 0;
+}
+
+nav ul li.search input:focus {
+    border: solid 1px rgb(188, 229, 162);
+}
+
+nav ul li.search button[type=submit] {
+    font-size: 1.1rem;
+    padding: 4px 15px;
+    background: rgb(152, 196, 125);
+    color: #dcf5cd;
+    border: solid 1px rgb(132, 182, 101);
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    margin: 0;
+}
+
+nav ul li.search button[type=submit]:hover, nav ul li.search button[type=submit]:focus {
+    cursor: pointer;
+    background: #add196;
+    color: #FFF;
+}
+
+nav figure {
+    display: block;
+    width: 100%;
+}
+
+#navFlair {
+    height: 30px;
+}
+
+#flairPath1 {
+    fill: #9BC97E;
+    stroke: #9BC97E;
+}
+
+#flairPath2 {
+    fill: #bfdcac;
+    stroke: #bfdcac;
+}
+
+
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.home-content p {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+.home-content form {
+    display: flex;
+    padding: 0 10%;
+    margin: 10px;
+}
+
+.home-content form input {
+    border: solid 1px #888;
+    flex: 1;
+    border-radius: 4px 0 0 4px;
+    font-size: 1.5rem;
+    color: #444;
+    padding: 2px;
+} 
+
+.home-content form button[type=submit] {
+    border: solid 1px rgb(85, 129, 58);
+    border-left: none;
+    font-size: 1.5rem;
+    color: #FFF;
+    background:#9BC97E;
+    padding: 6px 15px;
+    border-radius: 0 4px 4px 0;
+}
+
+.home-content form button[type=submit]:hover {
+    cursor: pointer;
+    background: rgb(122, 168, 94);
+}
+
+
+
+
+
+footer {
+    background: #9BC97E;
+    color: #FFF;
+    text-align: center;
+    z-index: 1;
+}
+
+footer p {
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+#footerFlair {
+    height: 30px;
+    z-index: 3;
+}
+
+#footPath1 {
+    fill: rgb(235, 233, 232);
+    stroke: rgb(235, 233, 232);
+}
+
+#footPath2 {
+    fill: #bfdcac;
+    stroke: #bfdcac;
+}
+
+
+
+
+/* MOBILE */
+@media(max-width: 999px) {
+    nav ul {
+        flex-direction: column;
+        overflow:hidden;
+    }
+
+    nav ul:not(.open) li:not(.search) {
+        height: 0;
+    }
+
+    .hamburger {
+        display: block;
+        background: #9BC97E;
+        color: #FFF;
+        text-align: center;
+        font-size: 2rem;
+        padding: 5px;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        text-align: center;
+    }
+    
+    .home-content form {
+        padding: 0;
+    }
+    
+    .home-content form input {
+        font-size: 1rem;
+    }
+    
+    .home-content form button[type=submit] {
+        font-size: 1rem;
+        padding: 3px;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+}
